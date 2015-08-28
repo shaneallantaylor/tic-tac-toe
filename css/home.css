@@ -1,0 +1,12 @@
+h1 {
+  padding-bottom: 100px;
+  color: orange;
+  text-align: center
+}
+
+.board {
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  background-color: grey;
+}
