@@ -3,6 +3,10 @@ var player_1 = [];
 var player_2 = [];
 var who_turn = "p1";
 
+$(document).ready(function(){
+    $("html,body").scrollTop(100);
+});
+
 // Switches the Player
 var changePlayer = function() {
   if (who_turn == "p1") {
@@ -102,7 +106,7 @@ var runWinCalculationForBothPlayers = function() {
 
 // });
 
-$('#1').click(function() {
+$('#one').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(1);
@@ -117,7 +121,7 @@ $('#1').click(function() {
   }
 });
 
-$('#2').click(function() {
+$('#two').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(2);
@@ -132,7 +136,7 @@ $('#2').click(function() {
   }
 });
 
-$('#3').click(function() {
+$('#three').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(3);
@@ -147,7 +151,7 @@ $('#3').click(function() {
   }
 });
 
-$('#4').click(function() {
+$('#four').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(4);
@@ -162,7 +166,7 @@ $('#4').click(function() {
   }
 });
 
-$('#5').click(function() {
+$('#five').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(5);
@@ -177,7 +181,7 @@ $('#5').click(function() {
   }
 });
 
-$('#6').click(function() {
+$('#six').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(6);
@@ -192,7 +196,7 @@ $('#6').click(function() {
   }
 });
 
-$('#7').click(function() {
+$('#seven').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(7);
@@ -207,7 +211,7 @@ $('#7').click(function() {
   }
 });
 
-$('#8').click(function() {
+$('#eight').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(8);
@@ -222,7 +226,7 @@ $('#8').click(function() {
   }
 });
 
-$('#9').click(function() {
+$('#nine').click(function() {
   if ($(this).hasClass("selected") == !true) {
     $(this).addClass(who_turn);
     markPlayer(9);

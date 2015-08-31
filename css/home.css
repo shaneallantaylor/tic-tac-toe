@@ -1,5 +1,5 @@
 h1 {
-  padding-bottom: 100px;
+  padding-bottom: 10px;
   color: orange;
   text-align: center
 }
@@ -10,28 +10,79 @@ h1 {
 }
 
 .board {
-  width: 300px;
+  width: 100%;
   font-size: 0;
   margin: auto;
-  background-image: url("../img/clippers.jpg");
+  background-image: url("../img/clippers-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 .board-piece {
   opacity: 1;
-  height: 100px;
-  width: 100px;
-  background-color: grey;
+  height: 33.33vh;
+  width: 33.333333%;
+  background-color: white;
   display: -webkit-inline-box;
+
+  border-style: solid;
+  box-sizing: border-box;
+  border-width: 1px;
+}
+
+#one {
+  border: 0;
+}
+
+#two {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+#three {
+  border: 0;
+}
+
+#four {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+#six {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+#seven {
+  border: 0;
+}
+
+#eight {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+#nine {
+  border: 0;
 }
 
 .p1 {
-  background-color: yellow;
-  opacity: 0.2;
+  background-image: url("../img/p1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-color: blue;
+  opacity: 0.3;
 }
 
 .p2 {
-  background-color: brown;
-  opacity: 0.2;
+  background-image: url("../img/p2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-color: red;
+  opacity: 0.3;
 }
 
 .game-over {
