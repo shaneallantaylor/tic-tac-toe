@@ -1,10 +1,30 @@
 var game_board = ["p","p","p","p","p","p","p","p","p"];
 var player_1 = [];
 var player_2 = [];
+var who_turn = "p1";
 
-var calculatePlayerScores = function(array) {
+// Switches the Player
+var changePlayer = function() {
+  if (who_turn == "p1") {
+    who_turn = "p2"
+  }
+  else if (who_turn == "p2") {
+    who_turn = "p1"
+  }
+}
 
-
+// "Marks" a square for a player (X or O!)
+var markPlayer = function(b) {
+  if (who_turn == "p1") {
+    game_board[b - 1] = "x";
+  }
+  else if (who_turn == "p2") {
+    game_board[b - 1] = "o";
+  }
+}
+// Takes the current state of the game_board array and generates each players "score"
+// this should be cleared later to avoid a needlessly hefty score array for each player
+var populateScoreArrays = function(array) {
   for (i = 0; i < array.length; i++) {
     if (array[i] == "x") {
       player_1.push(i);
@@ -16,13 +36,26 @@ var calculatePlayerScores = function(array) {
       player_2.push(i);
     }
   }
-
 }
 
-var checkPlayer = function(pl_arr, player_name) {
+// Clears the score arrays for both players
+var clearScoreArrays = function() {
+  player_1 = [];
+  player_2 = [];
+}
+
+// changes game board visuals to let players know that the game is over
+var endGame = function() {
+  $('.board-piece').addClass("game-over");
+}
+
+//
+var checkWinConditions = function(pl_arr, player_name) {
+
   // Top Row win Condition
   if ( (jQuery.inArray(0, pl_arr) > -1 ) && ( jQuery.inArray(1, pl_arr) > -1 ) && ( jQuery.inArray(2, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - TOP ROW!!");
+    endGame();
   }
   // middle row win condition
   else if ( (jQuery.inArray(3, pl_arr) > -1 ) && ( jQuery.inArray(4, pl_arr) > -1 ) && ( jQuery.inArray(5, pl_arr) > -1 )) {
@@ -53,17 +86,153 @@ var checkPlayer = function(pl_arr, player_name) {
     console.log("PLAYER WINS! - bottom left to top right!!");
   }
   else {
-    console.log("PLAYER has not won yet!");
+    // console.log("PLAYER has not won yet!");
   }
-  console.log("This check was done for " + player_name)
+  // console.log("This check was done for " + player_name);
+  // console.log("Score Array for Player 1 = " + player_1);
+  // console.log("Score Array for Player 2 = " + player_2);
 }
 
-$('.board').click(function() {
-  game_board[2] = "x";
-  console.log("you clicked the board!");
-})
+var runWinCalculationForBothPlayers = function() {
+  checkWinConditions(player_1, "Xs");
+  checkWinConditions(player_2, "Os");
+}
 
-calculatePlayerScores(game_board);
+// $('.board-piece').click(function() {
 
-checkPlayer(player_1, "Xs");
-checkPlayer(player_2, "Os");
+// });
+
+$('#1').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(1);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#2').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(2);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#3').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(3);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#4').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(4);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#5').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(5);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#6').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(6);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#7').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(7);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#8').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(8);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});
+
+$('#9').click(function() {
+  if ($(this).hasClass("selected") == !true) {
+    $(this).addClass(who_turn);
+    markPlayer(9);
+    changePlayer();
+    populateScoreArrays(game_board);
+    runWinCalculationForBothPlayers();
+    clearScoreArrays();
+    $(this).addClass("selected");
+  }
+  else {
+    console.log("this square has been selected already - please select a different square");
+  }
+});

@@ -4,9 +4,37 @@ h1 {
   text-align: center
 }
 
+.board-container {
+  height: 500px;
+  width: 100%;
+}
+
 .board {
-  margin: auto;
-  height: 300px;
   width: 300px;
+  font-size: 0;
+  margin: auto;
+  background-image: url("../img/clippers.jpg");
+}
+
+.board-piece {
+  opacity: 1;
+  height: 100px;
+  width: 100px;
   background-color: grey;
+  display: -webkit-inline-box;
+}
+
+.p1 {
+  background-color: yellow;
+  opacity: 0.2;
+}
+
+.p2 {
+  background-color: brown;
+  opacity: 0.2;
+}
+
+.game-over {
+  opacity: 0.2;
+  background-color: red;
 }
