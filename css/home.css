@@ -1,7 +1,13 @@
+body {
+  background-color: #fafafa;
+}
+
 h1 {
   padding-bottom: 10px;
-  color: orange;
-  text-align: center
+  text-align: center;
+  font-weight: 100;
+  font-size: -webkit-xxx-large;
+  color: rgb(0, 102, 204);
 }
 
 .end-card {
@@ -12,20 +18,23 @@ h1 {
   opacity: 0;
   transition: all 1.5s;
   width: 100%;
-  text-align: center
+  text-align: center;
+  z-index: -1;
 }
 
 .end-card p {
+  font-size: 36px;
   margin: 0.5em;
 }
 
 .board-container {
   height: 100vh;
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 
 .board {
-  width: 100%;
+  width: 80%;
   font-size: 0;
   margin: auto;
   background-image: url("../img/clippers-1.jpg");
@@ -37,13 +46,14 @@ h1 {
 .board-piece {
   opacity: 1;
   height: 33.33vh;
-  width: 33.333333%;
-  background-color: white;
+  width: 33.33%;
+  background-color: #fafafa;
   display: -webkit-inline-box;
 
   border-style: solid;
+  border-color: #666;
   box-sizing: border-box;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 #one {
@@ -87,7 +97,7 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-color: rgba(0, 102, 204, 0.5)
+  background-color: rgba(0, 102, 204, 0.5);
 }
 
 .p2 {
@@ -95,10 +105,14 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-color: rgba(255,0,51,0.5)
+  background-color: rgba(255,0,51,0.5);
 }
 
 .game-over {
   opacity: 0.2;
   background-color: white;
+}
+
+.win {
+  opacity: 0.7;
 }
