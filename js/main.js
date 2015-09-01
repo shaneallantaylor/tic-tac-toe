@@ -50,7 +50,11 @@ var clearScoreArrays = function() {
 
 // changes game board visuals to let players know that the game is over
 var endGame = function() {
+  changePlayer();
   $('.board-piece').addClass("game-over");
+  $('.board-piece').addClass("selected");
+  console.log(who_turn + " wins!");
+  $('.end-card').css("opacity", 1);
 }
 
 //
@@ -64,30 +68,37 @@ var checkWinConditions = function(pl_arr, player_name) {
   // middle row win condition
   else if ( (jQuery.inArray(3, pl_arr) > -1 ) && ( jQuery.inArray(4, pl_arr) > -1 ) && ( jQuery.inArray(5, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - MIDDLE ROW!!");
+    endGame();
   }
   // bottom row win condition
   else if ( (jQuery.inArray(6, pl_arr) > -1) && ( jQuery.inArray(7, pl_arr) > -1 ) && ( jQuery.inArray(8, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - BOTTOM ROW!!");
+    endGame();
   }
   // left column win condition
   else if ( (jQuery.inArray(0, pl_arr) > -1) && ( jQuery.inArray(3, pl_arr) > -1 ) && ( jQuery.inArray(6, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - LEFT COLUMN!!");
+    endGame();
   }
   // middle column win condition
   else if ( (jQuery.inArray(1, pl_arr) > -1) && ( jQuery.inArray(4, pl_arr) > -1 ) && ( jQuery.inArray(7, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - MIDDLE COLUMN!!");
+    endGame();
   }
   // right column win condition
   else if ( (jQuery.inArray(2, pl_arr) > -1) && ( jQuery.inArray(5, pl_arr) > -1 ) && ( jQuery.inArray(8, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - RIGHT COLUMN!!");
+    endGame();
   }
   // top left to bottom right win condition
   else if ( (jQuery.inArray(0, pl_arr) > -1) && ( jQuery.inArray(4, pl_arr) > -1 ) && ( jQuery.inArray(8, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - DIAGNOLLLLL (starting top, ending bottom)!!");
+    endGame();
   }
   // bottom left to top right win condition
   else if ( (jQuery.inArray(2, pl_arr) > -1) && ( jQuery.inArray(4, pl_arr) > -1 ) && ( jQuery.inArray(6, pl_arr) > -1 )) {
     console.log("PLAYER WINS! - bottom left to top right!!");
+    endGame();
   }
   else {
     // console.log("PLAYER has not won yet!");

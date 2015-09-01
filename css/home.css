@@ -4,8 +4,23 @@ h1 {
   text-align: center
 }
 
+.end-card {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  opacity: 0;
+  transition: all 1.5s;
+  width: 100%;
+  text-align: center
+}
+
+.end-card p {
+  margin: 0.5em;
+}
+
 .board-container {
-  height: 500px;
+  height: 100vh;
   width: 100%;
 }
 
@@ -72,8 +87,7 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-color: blue;
-  opacity: 0.3;
+  background-color: rgba(0, 102, 204, 0.5)
 }
 
 .p2 {
@@ -81,11 +95,10 @@ h1 {
   background-size: contain;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-color: red;
-  opacity: 0.3;
+  background-color: rgba(255,0,51,0.5)
 }
 
 .game-over {
   opacity: 0.2;
-  background-color: red;
+  background-color: white;
 }
